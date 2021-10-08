@@ -6,13 +6,13 @@ async function pushUniversitiesList()
     
     await getUniversities().then(data => {
         for (const key in data) {
-            univList.push(data[key].name)
+            univList.push([data[key].name, data[key].web_pages[0]])
         }
     })
 
     univList.forEach((item) => {
         let li = document.createElement("li");
-        li.innerText = item;
+        li.innerHTML = item[0] + "<br>" + "Website: <a target='_blank' href='" + item[1] + "'>" + item[0] + "</a>"
         li.classList.add("list-group-item");
         list.appendChild(li);
     });
@@ -38,7 +38,7 @@ function searchUniversities()
     input = document.getElementsByTagName("input")[0].value;
 
     searchList = univList.filter((item) => {
-       return item.toLowerCase().includes(input.toLowerCase())
+       return item[0].toLowerCase().includes(input.toLowerCase())
     })  
 
     // console.log(searchList)
@@ -58,7 +58,7 @@ function updateUniversitiesList(searchList)
 
     searchList.forEach(item => {
         let li = document.createElement("li");
-        li.innerText = item;
+        li.innerHTML = item[0] + "<br>" + "Website: <a target='_blank' href='" + item[1] + "'>" + item[0] + "</a>"
         li.classList.add("list-group-item");
         list.appendChild(li);
     });
