@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+        crossorigin="anonymous"></script>
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <div class="container vh-80 p-5">
+        <h1 class="text-center">Universities In Indonesia</h1>
+        <div class="input-group mt-5">
+            <span class="input-group-text" id="inputGroup-sizing-default">Search University</span>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default" onkeydown="searchUniversities()" onkeyup="searchUniversities()">
+        </div>
+
+        <ul id="universities-list" class="list-group mt-3">
+            
+        </ul>
+    </div>
+
+    <script onload="pushUniversitiesList()" src="index.js"></script>
+</body>
+
+</html>
